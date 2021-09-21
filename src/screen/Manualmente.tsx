@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import {TextInput, View, Text, Button} from 'react-native';
+import {TextInput, View, Text, Button, Alert} from 'react-native';
 import {StackScreenProps} from '@react-navigation/stack';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {styles} from '../theme/styles';
@@ -33,12 +33,16 @@ export default function Manualmente({navigation}: Props) {
   };
 
   const verificar = () => {
-    let filtrado = getFiltrado();
-    definirResultado(filtrado);
+    if (dni === '') {
+      Alert.alert('tiene que ingresar un dni valido ');
+    } else {
+      let filtrado = getFiltrado();
+      definirResultado(filtrado);
+    }
   };
 
   return (
-    <View>
+    <View style={{ height:"100%"  }}>
       {aceptado ? (
         <ModalAceptado />
       ) : rechazado ? (
@@ -46,22 +50,25 @@ export default function Manualmente({navigation}: Props) {
           nombre={dato.nombre}
           apellido={dato.apellido}
           dni={dato.dni}
-          instruccion={dato.dni}
+          foto={dato.foto}
         />
       ) : (
-        <View>
-          <TextInput
-            placeholder="Ingrese DNI, sin puntos"
-            placeholderTextColor="rgba(255,255,255,0.4)"
-            underlineColorAndroid="white"
-            keyboardType="numeric"
-            selectionColor="white"
-            onChangeText={valor => setDni(String(valor))}
-            value={dni}
-          />
-          <TouchableOpacity onPress={verificar}>
-            <Text>Verificar DNI</Text>
-          </TouchableOpacity>
+        <View style={styles.contenedorManualmente}>
+          <View style={styles.contenedorInputManual}>
+            <TextInput
+              style={styles.input}
+              placeholder="Ingrese DNI, sin puntos"
+              placeholderTextColor="rgba(255,255,255,0.4)"
+              underlineColorAndroid="white"
+              keyboardType="numeric"
+              selectionColor="gray"
+              onChangeText={valor => setDni(String(valor))}
+              value={dni}
+            />
+            <TouchableOpacity onPress={verificar} style={styles.botonManual}>
+              <Text style={styles.textoBotonManual}>Verificar DNI</Text>
+            </TouchableOpacity>
+          </View>
           <View style={styles.contenedorBotonesManualmente}>
             <TouchableOpacity
               style={styles.botonIconoManual}

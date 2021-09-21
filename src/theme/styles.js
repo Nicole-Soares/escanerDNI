@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     display: 'flex',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
   },
@@ -22,9 +22,10 @@ export const styles = StyleSheet.create({
     borderRadius: 15,
     borderWidth: 2,
     borderColor: '#BDDFE7',
-    width: 300,
-    height: 100,
+    width: 170,
+    height: 170,
     backgroundColor: '#BDDFE7',
+    marginBottom: 20,
   },
   textoBotonesPaginaHome: {
     textAlign: 'center',
@@ -34,7 +35,7 @@ export const styles = StyleSheet.create({
   iconosPaginaHome: {
     textAlign: 'center',
     color: '#4F5050',
-    marginBottom: -10,
+    marginTop: 30,
   },
   containerEscaner: {
     width: '100%',
@@ -51,8 +52,9 @@ export const styles = StyleSheet.create({
   },
   contenedorBotonesEscaner: {
     display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     height: 100,
   },
   textoBotonesEscaner: {
@@ -61,40 +63,68 @@ export const styles = StyleSheet.create({
     fontSize: 20,
   },
   botonIconoEscaner: {
-    width: 300,
-    height: 50,
+    width: 150,
+    height: 70,
     backgroundColor: '#BDDFE7',
     borderRadius: 15,
     borderWidth: 2,
     borderColor: '#BDDFE7',
-    marginBottom: 30,
+    textAlign: 'center',
   },
   iconosEscaner: {
     textAlign: 'center',
     color: '#4F5050',
     marginBottom: -10,
   },
+  contenedorManualmente: {
+    height: '100%',
+    width: '100%',
+  },
+  contenedorInputManual: {
+    height: 200,
+    display: 'flex',
+    justifyContent: 'flex-end',
+    marginTop: 80,
+  },
+  input: {
+    borderColor: 'black',
+    borderWidth: 2,
+    borderRadius: 15,
+    backgroundColor: '#BDDFE7',
+    marginBottom: 10,
+  },
+  botonManual: {
+    backgroundColor: '#BDDFE7',
+    width: 100,
+    borderRadius: 15,
+    borderWidth: 2,
+    alignSelf: 'center',
+  },
+  textoBotonManual: {
+    textAlign: 'center',
+    color: '#4F5050',
+    fontSize: 20,
+  },
   contenedorBotonesManualmente: {
     height: '100%',
     width: '100%',
     display: 'flex',
-    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     alignItems: 'center',
-    
   },
   textoBotonesManual: {
     textAlign: 'center',
     color: '#4F5050',
-    fontSize: 25,
+    fontSize: 15,
   },
   botonIconoManual: {
-    width: 300,
+    width: 100,
     height: 100,
     backgroundColor: '#BDDFE7',
     borderRadius: 15,
     borderWidth: 2,
     borderColor: '#BDDFE7',
-    marginBottom:10
   },
   modalAceptado: {
     backgroundColor: '#67C206',
@@ -109,10 +139,17 @@ export const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
   },
+
   textoModales: {
     fontSize: 30,
     color: 'white',
     textAlign: 'center',
+  },
+  textoModalesNegro:{
+    fontSize: 30,
+    color: 'white',
+    textAlign: 'center',
+    fontWeight:"bold"
   },
   segundoTextoModales: {
     color: 'black',
@@ -131,5 +168,12 @@ export const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom:10
+  },
+  imagenModalRechazado: {
+    width: 200,
+    height: 200,
+    justifyContent:"center",
+    alignSelf:"center"
   },
 });

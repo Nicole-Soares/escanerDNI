@@ -47,7 +47,7 @@ export default function Escaner({navigation}: Props) {
           nombre={dato.nombre}
           apellido={dato.apellido}
           dni={dato.dni}
-          instruccion={dato.dni}
+          foto={dato.foto}
         />
       ) : (
         <View style={styles.containerEscaner}>
